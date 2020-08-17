@@ -13,6 +13,8 @@ function UserLogin(props) {
   const dispatch = useDispatch();
   const [inputs, setInputs] = useState({});
   const [emailError, setEmailError] = useState("");
+  const [saveUser, setSaveUser] = useState(true);
+
   const myRef = useRef(null);
   const stateData = useSelector((state) => {
     return state.auth;
@@ -44,6 +46,7 @@ function UserLogin(props) {
     const loginInfo = {
       email: inputs.email,
       password: inputs.password,
+      saveUser: saveUser,
     };
 
     if (inputs.email === "" || inputs.password === "") {
@@ -105,7 +108,11 @@ function UserLogin(props) {
               className="form_content-login"
               style={{ flexDirection: "row", alignItems: "flex-end" }}
             >
-              <input type="checkbox" />
+              <input
+                type="checkbox"
+                checked
+                onChange={setSaveUser(!saveUser)}
+              />
               <label style={{ paddingLeft: "10px" }}>Remember this user</label>
             </div>
             <button

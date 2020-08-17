@@ -204,9 +204,11 @@ export const loginSubmit = (data) => {
             },
           });
 
-          localStorage.setItem("debateAccountToken", result.data.authToken);
-          localStorage.setItem("email", result.data.data.email);
-          localStorage.setItem("id", result.data.data.id);
+          if (data.saveUser == true) {
+            localStorage.setItem("debateAccountToken", result.data.authToken);
+            localStorage.setItem("email", result.data.data.email);
+            localStorage.setItem("id", result.data.data.id);
+          }
           toast.success("Logged in successfully");
 
           setInterval(() => {
@@ -392,22 +394,22 @@ export const setNewPassword = (data) => {
 
 export const logout = () => {
   return (dispatch) => {
-    console.log('log out api called');
+    console.log("log out api called");
     const data = {
-      id: localStorage.getItem('id')
-    }
+      id: localStorage.getItem("id"),
+    };
 
     axios
       .put(`${process.env.REACT_APP_API_URL}logout`, data)
       .then((result) => {
-        console.log('result logged out... ', result.data);
+        console.log("result logged out... ", result.data);
 
         dispatch({
-          type: "LOGOUT"
-        })
+          type: "LOGOUT",
+        });
       })
       .catch((err) => {
-        console.log('error.. ',err);
-      })
-  }
-}
+        console.log("error.. ", err);
+      });
+  };
+};
