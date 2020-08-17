@@ -1,0 +1,334 @@
+import React, { Component } from "react";
+import OwlCarousel from "react-owl-carousel";
+import "owl.carousel/dist/assets/owl.carousel.css";
+import "owl.carousel/dist/assets/owl.theme.default.css";
+export default class LandingPage extends Component {
+  componentDidMount() {
+    const script = document.createElement("script");
+    // script.src = `./assets/js/landingPageScript.js`;
+    // script.src = `./assets/js/custom.js`;
+
+    // script.src = `./assets/js/custom.js`;
+    // script.src = `./assets/js/jquery.flagstrap.js`;
+    // script.async = true;
+    // document.body.appendChild(script);
+  }
+  render() {
+    return (
+      <div>
+        <header className>
+          <div className="logo_container">
+            <div className="logo">pieramo</div>
+            <div className="sub_tag_line">your opinion matters.</div>
+          </div>
+
+          <div className="main_header">
+            <div className="search_field">
+              <img
+                className="search_icon"
+                src={`../assets/images/search.png`}
+              />
+              <input type="text" placeholder="Search For Debates" />
+            </div>
+
+            <div className="header_items">
+              <div className="setting_img">
+                <a href="#">
+                  <img
+                    className="settings"
+                    src={`../assets/images/settings.png`}
+                  />
+                </a>
+              </div>
+              <div className="contry_box">
+                <div className="form-group">
+                  <div id="basic" data-input-name="country" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </header>
+        <div className="main">
+          <div className="left_sidebar">
+            <div className="side_content active">
+              <img src={`../assets/images/home_active.png`} />
+              <div>Home</div>
+            </div>
+            <div className="side_content">
+              <img src={`../assets/images/debates.png`} />
+              <div>Debate</div>
+            </div>
+            <div className="side_content">
+              <img src={`../assets/images/following.png`} />
+              <div>following</div>
+            </div>
+            <div className="side_content">
+              <img src={`../assets/images/my_sc.png`} />
+              <div>my account</div>
+            </div>
+            <div className="side_content">
+              <img src={`../assets/images/premium.png`} />
+              <div>pieramo premium</div>
+            </div>
+            <div className="side_content">
+              <img src={`../assets/images/us.png`} />
+              <div>about us</div>
+            </div>
+            <div className="side_content">
+              <img src={`../assets/images/term_cond.png`} />
+              <div>terms and conditions</div>
+            </div>
+          </div>
+          <div className="main_container d-flex">
+            <div className="featured_containers">
+              <div className="featured_container">
+                <div className="featured_image position-relative">
+                  <img
+                    className="featured_main_image"
+                    src={`../assets/images/soulmate.png`}
+                  />
+                  <img
+                    className="featured"
+                    src={`../assets/images/featured.png`}
+                  />
+                  <div className="featured_texts">
+                    <div className="featured_title">
+                      Why Finding Your Soulmate Is All You Need!
+                    </div>
+                    <div className="featured_users">
+                      <div className="user1">Dave, Austria</div>
+                      <div className="pipe_orange" />
+                      <div className="user2">Nancy, India</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="feat_vid_desc">
+                  <div className="watched">
+                    <div className="feat_vid_desc_title">watched</div>
+                    <div className="watched_desc">
+                      <div>2.5K</div>
+                      <img src={`../assets/images/eye.png`} />
+                    </div>
+                  </div>
+                  <div className="votes">
+                    <div className="feat_vid_desc_title">Votes</div>
+                    <div className="votes_desc">
+                      <div className="feat_user1">
+                        <img src={`../assets/images/user1.png`} />
+                        <div>359</div>
+                      </div>
+                      <div className="grey_pipe" />
+                      <div className="feat_user1">
+                        <img src={`../assets/images/user2.png`} />
+                        <div>15</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="featured_container">
+                <div className="featured_image position-relative">
+                  <img
+                    className="featured_main_image"
+                    src={`../assets/images/nusa.png`}
+                  />
+                  <img
+                    className="featured"
+                    src={`../assets/images/featured.png`}
+                  />
+                  <div className="featured_texts">
+                    <div className="featured_title">
+                      Nusa Penida is the best in The World!!
+                    </div>
+                    <div className="featured_users">
+                      <div className="user1">Dave, Austria</div>
+                      <div className="pipe_orange" />
+                      <div className="user2">Nancy, India</div>
+                    </div>
+                  </div>
+                </div>
+                <div className="feat_vid_desc">
+                  <div className="watched">
+                    <div className="feat_vid_desc_title">watched</div>
+                    <div className="watched_desc">
+                      <div>2.5K</div>
+                      <img src={`../assets/images/eye.png`} />
+                    </div>
+                  </div>
+                  <div className="votes">
+                    <div className="feat_vid_desc_title">Votes</div>
+                    <div className="votes_desc">
+                      <div className="feat_user1">
+                        <img src={`../assets/images/user1.png`} />
+                        <div>359</div>
+                      </div>
+                      <div className="grey_pipe" />
+                      <div className="feat_user1">
+                        <img src={`../assets/images/user2.png`} />
+                        <div>15</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="main_vids_cat">
+              <div className="tabs_of_vids">
+                <div className="tab active">Recommended</div>
+                <div className="tab">Favorites</div>
+                <div className="tab">Playlists</div>
+              </div>
+              <div className="category_vids">
+                <div className="cat_title">Politics</div>
+
+                <OwlCarousel
+                  className="owl-one"
+                  margin={20}
+                  items={3}
+                  stagePadding={50}
+                >
+                  <div className="video position-relative">
+                    <button className="play" onclick="playPause('video7')">
+                      <img src={`../assets/images/play.png`} />{" "}
+                    </button>
+                    <video id="video7">
+                      <source
+                        src={`../assets/video/test2.mp4`}
+                        type="video/mp4"
+                      />
+                      <source src={`mov_bbb.ogg" type="video/ogg"`} />
+                    </video>
+                  </div>
+                  <div className="video position-relative">
+                    <button className="play" onclick="playPause('video7')">
+                      <img src={`../assets/images/play.png`} />{" "}
+                    </button>
+                    <video id="video7">
+                      <source
+                        src={`../assets/video/test2.mp4`}
+                        type="video/mp4"
+                      />
+                      <source src={`mov_bbb.ogg" type="video/ogg"`} />
+                    </video>
+                  </div>
+
+                  <div className="video position-relative">
+                    <button className="play" onclick="playPause('video7')">
+                      <img src={`../assets/images/play.png`} />{" "}
+                    </button>
+                    <video id="video7">
+                      <source
+                        src={`../assets/video/test2.mp4`}
+                        type="video/mp4"
+                      />
+                      <source src={`mov_bbb.ogg" type="video/ogg"`} />
+                    </video>
+                  </div>
+
+                  <div className="video position-relative">
+                    <button className="play" onclick="playPause('video7')">
+                      <img src={`../assets/images/play.png`} />{" "}
+                    </button>
+                    <video id="video7">
+                      <source
+                        src={`../assets/video/test2.mp4`}
+                        type="video/mp4"
+                      />
+                      <source src={`mov_bbb.ogg" type="video/ogg"`} />
+                    </video>
+                  </div>
+                  <div className="video position-relative">
+                    <button className="play" onclick="playPause('video7')">
+                      <img src={`../assets/images/play.png`} />{" "}
+                    </button>
+                    <video id="video7">
+                      <source
+                        src={`../assets/video/test2.mp4`}
+                        type="video/mp4"
+                      />
+                      <source src={`mov_bbb.ogg" type="video/ogg"`} />
+                    </video>
+                  </div>
+                </OwlCarousel>
+              </div>
+              <div className="category_vids">
+                <div className="cat_title">Psychology</div>
+
+                <OwlCarousel
+                  className="owl-two"
+                  margin={20}
+                  items={3}
+                  stagePadding={50}
+                >
+                  <div className="video position-relative">
+                    <button className="play" onclick="playPause('video7')">
+                      <img src={`../assets/images/play.png`} />{" "}
+                    </button>
+                    <video id="video7">
+                      <source
+                        src={`../assets/video/test2.mp4`}
+                        type="video/mp4"
+                      />
+                      <source src={`mov_bbb.ogg" type="video/ogg"`} />
+                    </video>
+                  </div>
+                  <div className="video position-relative">
+                    <button className="play" onclick="playPause('video7')">
+                      <img src={`../assets/images/play.png`} />{" "}
+                    </button>
+                    <video id="video7">
+                      <source
+                        src={`../assets/video/test2.mp4`}
+                        type="video/mp4"
+                      />
+                      <source src={`mov_bbb.ogg" type="video/ogg"`} />
+                    </video>
+                  </div>
+
+                  <div className="video position-relative">
+                    <button className="play" onclick="playPause('video7')">
+                      <img src={`../assets/images/play.png`} />{" "}
+                    </button>
+                    <video id="video7">
+                      <source
+                        src={`../assets/video/test2.mp4`}
+                        type="video/mp4"
+                      />
+                      <source src={`mov_bbb.ogg" type="video/ogg"`} />
+                    </video>
+                  </div>
+
+                  <div className="video position-relative">
+                    <button className="play" onclick="playPause('video7')">
+                      <img src={`../assets/images/play.png`} />{" "}
+                    </button>
+                    <video id="video7">
+                      <source
+                        src={`../assets/video/test2.mp4`}
+                        type="video/mp4"
+                      />
+                      <source src={`mov_bbb.ogg" type="video/ogg"`} />
+                    </video>
+                  </div>
+                  <div className="video position-relative">
+                    <button className="play" onclick="playPause('video7')">
+                      <img src={`../assets/images/play.png`} />{" "}
+                    </button>
+                    <video id="video7">
+                      <source
+                        src={`../assets/video/test2.mp4`}
+                        type="video/mp4"
+                      />
+                      <source src={`mov_bbb.ogg" type="video/ogg"`} />
+                    </video>
+                  </div>
+                </OwlCarousel>
+              </div>
+            </div>
+          </div>
+        </div>
+        {/* script files */}
+      </div>
+    );
+  }
+}
