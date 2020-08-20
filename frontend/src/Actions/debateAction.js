@@ -210,6 +210,7 @@ export const viewPrivateProposals = () => {
       .then((result) => {
         console.log("result.data private ", result.data);
         if (result.data.code == 200) {
+          localStorage.setItem("notificationLength", result.data.data.length);
           dispatch({
             type: "VIEW_PRIVATE_PROPOSALS",
             payload: result.data.data,
@@ -243,9 +244,13 @@ export const privateProposalAcceptReject = (data) => {
             payload: result.data.data,
           });
 
-          swal("Info", "You rejected private proposal!", "info").then(() => {
-            window.location.reload();
-          });
+          if (data.status == "reject") {
+            swal("Info", "Debate proposal missed!", "info").then(() => {
+              window.location.reload();
+            });
+          } else {
+            // redirect to video page where debate will start
+          }
         } else {
           dispatch({
             type: "ERROR",

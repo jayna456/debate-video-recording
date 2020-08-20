@@ -66,6 +66,11 @@ function UserLogin(props) {
     props.history.push("/forgotPassword");
   };
 
+  const setCheckBoxValue = async (e) => {
+    setSaveUser(!saveUser);
+    console.log("save user.. ", e.target.value, saveUser);
+  };
+
   return (
     <div>
       <div className="login">
@@ -110,8 +115,8 @@ function UserLogin(props) {
             >
               <input
                 type="checkbox"
-                checked
-                onChange={setSaveUser(!saveUser)}
+                checked={saveUser}
+                onChange={(e) => setCheckBoxValue(e)}
               />
               <label style={{ paddingLeft: "10px" }}>Remember this user</label>
             </div>

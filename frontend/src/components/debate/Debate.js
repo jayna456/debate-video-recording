@@ -282,15 +282,18 @@ const Debate = (props) => {
               </div>
               <div className="modal-body">
                 <div className="form-group">
-                  <label htmlFor="exampleFormControlSelect2" className="d-flex">
-                    Choose a time option
-                    <p
-                      rel="tooltip"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      title="Tooltip on top"
-                    >
-                      &nbsp; ?
+                  <label
+                    htmlFor="exampleFormControlSelect2"
+                    className="d-flex align-items-center"
+                    style={{ alignItems: "center" }}
+                  >
+                    Choose a time option&nbsp;
+                    <p className="tooltip">
+                      ?
+                      <span className="tooltiptext" style={{ width: "290px" }}>
+                        Duration time of Debate i.e. 12 minutes, 30 minutes and
+                        1 hour and 30 minutes
+                      </span>
                     </p>
                   </label>
                   <select
@@ -307,15 +310,18 @@ const Debate = (props) => {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="mode" className="d-flex">
-                    Choose debate mode
-                    <p
-                      rel="tooltip"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      title="Tooltip on top"
-                    >
-                      &nbsp; ?
+                  <label
+                    htmlFor="mode"
+                    className="d-flex"
+                    style={{ alignItems: "center" }}
+                  >
+                    Choose debate mode&nbsp;
+                    <p className="tooltip">
+                      ?
+                      <span className="tooltiptext" style={{ width: "290px" }}>
+                        Open mode lets both debaters talk simultaneously, while
+                        the other one it is per turns and mutes the other user.
+                      </span>
                     </p>
                   </label>
                   <select
@@ -329,15 +335,17 @@ const Debate = (props) => {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="exampleFormControlInput1" className="d-flex">
-                    Enter Debate topic
-                    <p
-                      rel="tooltip"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      title="Tooltip on top"
-                    >
-                      &nbsp; ?
+                  <label
+                    htmlFor="exampleFormControlInput1"
+                    className="d-flex"
+                    style={{ alignItems: "center" }}
+                  >
+                    Enter Debate topic&nbsp;
+                    <p className="tooltip">
+                      ?
+                      <span className="tooltiptext" style={{ width: "260px" }}>
+                        Topic on which debate will happen
+                      </span>
                     </p>
                   </label>
                   <input
@@ -359,15 +367,18 @@ const Debate = (props) => {
                   />
                 </div>
                 <div className="form-group">
-                  <label htmlFor="lang" className="d-flex">
-                    Select opinion
-                    <p
-                      rel="tooltip"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      title="Tooltip on top"
-                    >
-                      &nbsp; ?
+                  <label
+                    htmlFor="lang"
+                    className="d-flex"
+                    style={{ alignItems: "center" }}
+                  >
+                    Select opinion&nbsp;
+                    <p className="tooltip">
+                      ?
+                      <span className="tooltiptext" style={{ width: "320px" }}>
+                        From Debate topic select your opnion like: Agree,
+                        Disagree, Some what agree, Some what disagree
+                      </span>
                     </p>
                   </label>
                   <select
@@ -383,15 +394,19 @@ const Debate = (props) => {
                   </select>
                 </div>
                 <div className="form-group">
-                  <label htmlFor="lang" className="d-flex">
-                    Select Proposal
-                    <p
-                      rel="tooltip"
-                      data-toggle="tooltip"
-                      data-placement="top"
-                      title="Tooltip on top"
-                    >
-                      &nbsp; ?
+                  <label
+                    htmlFor="lang"
+                    className="d-flex"
+                    style={{ alignItems: "center" }}
+                  >
+                    Select Proposal&nbsp;
+                    <p className="tooltip">
+                      ?
+                      <span className="tooltiptext" style={{ width: "360px" }}>
+                        Private proposal lets you allow to send proposal to user
+                        directly, where in public proposal anyone can join
+                        debate
+                      </span>
                     </p>
                   </label>
                   <select
@@ -410,7 +425,7 @@ const Debate = (props) => {
                       classNamePrefix="form-control"
                       options={userList}
                       search
-                      placeholder="SEARCH USER"
+                      placeholder="Search User"
                       onChange={(e) => selectValue(e)}
                     />
                   </div>

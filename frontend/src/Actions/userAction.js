@@ -204,11 +204,11 @@ export const loginSubmit = (data) => {
             },
           });
 
-          if (data.saveUser == true) {
-            localStorage.setItem("debateAccountToken", result.data.authToken);
-            localStorage.setItem("email", result.data.data.email);
-            localStorage.setItem("id", result.data.data.id);
-          }
+          // if (data.saveUser == true) {
+          localStorage.setItem("debateAccountToken", result.data.authToken);
+          localStorage.setItem("email", result.data.data.email);
+          localStorage.setItem("id", result.data.data.id);
+          // }
           toast.success("Logged in successfully");
 
           setInterval(() => {

@@ -601,7 +601,7 @@ exports.viewPrivateRequests = async (req, res) => {
         _id: privateRequests[0]._id,
         message:
           privateRequests[0].proposalStatus == "reject"
-            ? "Debate proposal missed from " + user1.userName
+            ? ""
             : user1.userName +
               " has send you private proposal for debate named " +
               debateName.topicName,

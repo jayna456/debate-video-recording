@@ -9,6 +9,7 @@ import {
   viewPrivateProposals,
   privateProposalAcceptReject,
 } from "../Actions/debateAction";
+import moment from "moment";
 
 function LandingPageHeader(props) {
   const [chkLoginUser, setChkLoginUser] = useState(false);
@@ -17,6 +18,7 @@ function LandingPageHeader(props) {
   const [isOpen, setIsOpen] = useState(false);
   const [isNotificationOpen, setIsNotificationOpen] = useState(false);
   const [editModel, setEditModel] = useState(false);
+  const [viewed, setViewed] = useState(false);
 
   const menuClass = `dropdown-menu dropdown-menu-right${isOpen ? " show" : ""}`;
 
@@ -89,6 +91,23 @@ function LandingPageHeader(props) {
     console.log("fn click");
     setIsNotificationOpen(!isNotificationOpen);
     setIsOpen(false);
+
+    if (
+      stateDebate &&
+      stateDebate.proposalList &&
+      stateDebate.proposalList.length
+    ) {
+      stateDebate.proposalList.forEach((request) => {
+        if (
+          moment(request.createdDate).format("YYYY-MM-DD") ==
+          moment().format("YYYY-MM-DD")
+        ) {
+          setViewed(true);
+        } else {
+          setViewed(false);
+        }
+      });
+    }
   };
 
   const loggedout = async () => {
@@ -219,14 +238,25 @@ function LandingPageHeader(props) {
 
             {chkLoginUser ? (
               <div>
-                <div style={{ marginRight: "13px", cursor: "pointer" }}>
-                  <i
-                    className="fa fa-bell fa-lg"
-                    aria-hidden="true"
-                    id="dropdownMenuButton1"
-                    onClick={toggleNotiValue}
-                  ></i>
-                </div>
+                {viewed ? (
+                  <div style={{ cursor: "pointer", marginRight: "13px" }}>
+                    <i
+                      className="fa fa-bell fa-lg"
+                      aria-hidden="true"
+                      id="dropdownMenuButton1"
+                      onClick={toggleNotiValue}
+                    ></i>
+                  </div>
+                ) : (
+                  <div className="bell-icon">
+                    <i
+                      className="fa fa-bell fa-lg"
+                      aria-hidden="true"
+                      id="dropdownMenuButton1"
+                      onClick={toggleNotiValue}
+                    ></i>
+                  </div>
+                )}
 
                 <div
                   className={menuClass1}
