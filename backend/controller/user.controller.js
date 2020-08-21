@@ -232,17 +232,21 @@ exports.login = (req, res) => {
       .exec((err, foundUser) => {
         if (foundUser) {
           if (verify(req.body.password, foundUser.password)) {
-            user.findByIdAndUpdate({ _id: foundUser._id }, 
+            user.findByIdAndUpdate(
+              { _id: foundUser._id },
               {
-                $set:
-                {
-                  isActive: true
-                }
-              }, {new:true}, (e1) => {
-                if(e1) {
+                $set: {
+                  isActive: true,
+                  saveUser: req.body.saveUser,
+                },
+              },
+              { new: true },
+              (e1) => {
+                if (e1) {
                   return;
                 }
-              })
+              }
+            );
 
             const data = {
               _id: foundUser._id,
@@ -254,7 +258,11 @@ exports.login = (req, res) => {
               code: 200,
               status: "success",
               authToken: token,
-              data: { id: foundUser._id, email: foundUser.email },
+              data: {
+                id: foundUser._id,
+                email: foundUser.email,
+                saveUser: foundUser.saveUser,
+              },
             });
           } else {
             res.json({
@@ -281,24 +289,27 @@ exports.login = (req, res) => {
 };
 
 exports.logout = (req, res) => {
-  console.log('log out api req.body.. ', req.body);
-  user.findByIdAndUpdate({ _id: req.body.id }, 
+  console.log("log out api req.body.. ", req.body);
+  user.findByIdAndUpdate(
+    { _id: req.body.id },
     {
-      $set:
-      {
-        isActive: false
-      }
-    }, {new:true}, (e1) => {
-      if(e1) {
+      $set: {
+        isActive: false,
+      },
+    },
+    { new: true },
+    (e1) => {
+      if (e1) {
         return;
       }
 
-      console.log('log out api updated successfully.. ');
+      console.log("log out api updated successfully.. ");
       res.json({
         code: 200,
-        status: 'success'
-      })
-    })
+        status: "success",
+      });
+    }
+  );
 };
 
 exports.changePassword = async (req, res) => {
@@ -662,6 +673,26 @@ exports.setNewPassword = async (req, res) => {
       code: 404,
       status: "err",
       message: "No user found",
+    });
+  }
+};
+
+exports.checkSaveUser = async (req, res) => {
+  console.log("checkSaveUser.. ");
+
+  const loginUser = await user.findOne({ _id: req.query.id }).exec();
+
+  if (loginUser) {
+    res.json({
+      code: 200,
+      status: "success",
+      data: loginUser,
+    });
+  } else {
+    res.json({
+      code: 404,
+      status: "err",
+      message: "Mo user found",
     });
   }
 };

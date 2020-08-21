@@ -204,11 +204,9 @@ export const loginSubmit = (data) => {
             },
           });
 
-          // if (data.saveUser == true) {
           localStorage.setItem("debateAccountToken", result.data.authToken);
           localStorage.setItem("email", result.data.data.email);
           localStorage.setItem("id", result.data.data.id);
-          // }
           toast.success("Logged in successfully");
 
           setInterval(() => {
@@ -407,6 +405,30 @@ export const logout = () => {
         dispatch({
           type: "LOGOUT",
         });
+      })
+      .catch((err) => {
+        console.log("error.. ", err);
+      });
+  };
+};
+
+export const checkUser = () => {
+  return (dispatch) => {
+    axios
+      .get(
+        `${
+          process.env.REACT_APP_API_URL
+        }checkSaveUser?id=${localStorage.getItem("id")}`
+      )
+      .then((result) => {
+        console.log("result logged out... ", result.data);
+
+        if (result.data.code == 200) {
+          dispatch({
+            type: "CHECK_SAVEUSER",
+            payload: result.data.data,
+          });
+        }
       })
       .catch((err) => {
         console.log("error.. ", err);

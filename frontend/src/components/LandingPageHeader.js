@@ -45,9 +45,24 @@ function LandingPageHeader(props) {
       setChkLoginUser(true);
       dispatch(getUserProfileInfo(localStorage.getItem("id")));
       dispatch(viewPrivateProposals());
+      if (
+        stateDebate &&
+        stateDebate.proposalList &&
+        stateDebate.proposalList.length
+      ) {
+        stateDebate.proposalList.forEach((request) => {
+          if (
+            moment(request.createdDate).format("YYYY-MM-DD") ==
+            moment().format("YYYY-MM-DD")
+          ) {
+            setViewed(true);
+          } else {
+            setViewed(false);
+          }
+        });
+      }
     } else {
       setChkLoginUser(false);
-      // console.log(chkLoginUser);
     }
   }, []);
 
@@ -238,8 +253,9 @@ function LandingPageHeader(props) {
 
             {chkLoginUser ? (
               <div>
+                {console.log("viewed... ", viewed)}
                 {viewed ? (
-                  <div style={{ cursor: "pointer", marginRight: "13px" }}>
+                  <div className="bell-icon">
                     <i
                       className="fa fa-bell fa-lg"
                       aria-hidden="true"
@@ -248,7 +264,7 @@ function LandingPageHeader(props) {
                     ></i>
                   </div>
                 ) : (
-                  <div className="bell-icon">
+                  <div style={{ cursor: "pointer", marginRight: "13px" }}>
                     <i
                       className="fa fa-bell fa-lg"
                       aria-hidden="true"

@@ -14,7 +14,8 @@ let newUserSchema = mongoose.Schema({
   createdDate: { type: Date, default: moment() },
   updatedDate: { type: Date },
   status: { type: String, default: "active" },
-  isActive: { type: Boolean }
+  isActive: { type: Boolean },
+  saveUser: { type: Boolean },
 });
 
 module.exports = new mongoose.model("user", newUserSchema);

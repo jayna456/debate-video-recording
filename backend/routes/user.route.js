@@ -13,5 +13,6 @@ router.post("/editProfileImg", user.editProfileImg);
 router.get("/getProfileInfo", user.getProfileInfo);
 router.put("/forgotPassword", user.forgotPassword);
 router.put("/setNewPassword", user.setNewPassword);
+router.get("/checkSaveUser", user.checkSaveUser);
 
 module.exports = router;

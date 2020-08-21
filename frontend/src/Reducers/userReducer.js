@@ -44,7 +44,7 @@ const userReducer = (state = userState, action) => {
         id: action.payload,
       };
 
-    case "LOGIN_USER":
+    case "IS_LOGIN":
       return {
         ...state,
         loginInfo: action.payload,
@@ -77,10 +77,16 @@ const userReducer = (state = userState, action) => {
         ...state,
       };
 
-    case 'LOGOUT':
+    case "LOGOUT":
       return {
-        ...state
-      }
+        ...state,
+      };
+
+    case "CHECK_SAVEUSER":
+      return {
+        ...state,
+        checkSaveUser: action.payload,
+      };
 
     default:
       return state;

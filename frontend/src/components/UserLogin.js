@@ -55,6 +55,7 @@ function UserLogin(props) {
       const getCallBack = await dispatch(loginSubmit(loginInfo));
       console.log(myRef.current);
       console.log("caa", stateData.isLogin);
+      localStorage.setItem("saveUser", saveUser);
     }
   };
 
@@ -67,7 +68,12 @@ function UserLogin(props) {
   };
 
   const setCheckBoxValue = async (e) => {
-    setSaveUser(!saveUser);
+    // setSaveUser(!saveUser);
+    if (saveUser == true) {
+      setSaveUser(false);
+    } else {
+      setSaveUser(true);
+    }
     console.log("save user.. ", e.target.value, saveUser);
   };
 
