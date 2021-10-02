@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+body .register {
+  background-image: linear-gradient(
+      180deg,
+      rgba(255, 146, 29, 0.78),
+      hsla(0, 0%, 100%, 0.77)
+    ),
+    url(../images/sign-up_new.jpg) !important;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+header {
+  top: 0;
+  justify-content: center;
+}
+.logo-register {
+  font-size: 40px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.sub_tag_line-register {
+  font-size: 14px;
+  margin-top: 5px;
+}
+.logo_container-register {
+  color: #ff921d;
+  text-align: center;
+}
+.form-register {
+  width: 50%;
+  margin: auto;
+}
+.title-register {
+  font-size: 34px;
+  color: #ff921d;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.form-register > form {
+  background: #ffffffad;
+  padding: 20px;
+  position: relative;
+  top: 120px;
+}
+.form_content-register {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
+.form_content-register input {
+  height: 30px;
+  border: 0;
+  padding-inline-start: 10px;
+  border-radius: 6px;
+}
+.checkbox-register {
+  display: flex;
+  margin-left: 20px;
+}
+
+button.confirm_ac {
+  background: #ff921d;
+  border: 0;
+  color: #ffffff;
+  padding: 5px 15px;
+  font-size: 18px;
+  font-weight: 500;
+  border-radius: 6px;
+}
+
+.register-header {
+  /* border-bottom: 1px solid #ebebeb; */
+  display: flex !important;
+  align-items: center !important;
+  height: 80px !important;
+  /* position: fixed; */
+  width: 100% !important;
+  /* background-color: #ffffff; */
+  z-index: 9 !important;
+  pointer-events: none;
+}
+header.register-header {
+  padding: 10px 0;
+  background-color: #ffffffc9;
+  border-bottom-right-radius: 25px;
+  border-bottom-left-radius: 25px;
+}
+.checkbox-register {
+  margin-left: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.checkbox-register input {
+  margin-right: 10px;
+}
+.form_content-register.pre_account {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+.form_content-register.pre_account a {
+  color: #ff921d;
+  cursor: pointer;
+}
+
+.form_content-register a:hover {
+  cursor: pointer;
+}
+
+.frm-reg {
+  border-radius: 6px;
+}
+
+.back_register {
+  margin: 30px;
+}
+
+i.back_register.fa.fa-arrow-left {
+  transform: scale(1.5, 2);
+  color: red;
+}

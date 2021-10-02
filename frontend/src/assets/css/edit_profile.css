@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+/* header starts */
+header {
+  border-bottom: 1px solid #ebebeb;
+  display: flex;
+  align-items: center;
+  height: 80px;
+  position: fixed;
+  width: 100%;
+  background-color: #ffffff;
+  z-index: 9;
+}
+.logo_container {
+  flex: 1;
+  border-right: 1px solid #ebebeb;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  color: #ff921d;
+  height: 80px;
+  justify-content: center;
+}
+.logo {
+  font-size: 35px;
+  font-weight: 900;
+  line-height: 1;
+}
+.sub_tag_line {
+  font-size: 14px;
+  margin-top: 5px;
+}
+.main_header {
+  flex: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+.search_field {
+  width: 100%;
+}
+.search_field input::placeholder {
+  font-size: 18px;
+  color: #b6b6b6;
+}
+.search_field input {
+  border: 0;
+  padding-left: 20px;
+  outline: none;
+  width: 100%;
+}
+img.search_icon {
+  margin-left: 25px;
+}
+.header_items {
+  margin-right: 25px;
+  display: flex;
+  align-items: center;
+}
+.search_field {
+  width: 50%;
+  display: flex;
+  align-items: center;
+}
+.header_items .form-group {
+  margin: 0;
+}
+.position-relative {
+  position: relative;
+}
+.setting_img {
+  display: inline-block;
+  margin-right: 20px;
+}
+div#basic.flagstrap .dropdown-menu {
+  right: 0 !important;
+  left: inherit !important;
+}
+.contry_box {
+  display: inline-block;
+}
+.main_container {
+  display: flex !important;
+}
+div#basic > button {
+  border: none;
+  outline: none;
+}
+div#basic > button:hover,
+.open > .dropdown-toggle.btn-default {
+  background: none;
+  box-shadow: none;
+}
+.contry_box select {
+  border: none;
+}
+.contry_box select option img {
+  border-right: 50%;
+}
+img.search_icon,
+img.settings {
+  width: 27px;
+}
+/* header ends */
+.left_sidebar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: fixed;
+  top: 80px;
+  width: 16.7%;
+}
+.main_container {
+  flex: 5;
+}
+.main {
+  position: relative;
+  top: 80px;
+}
+.side_content {
+  padding: 15px 0;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid #f0f0f0;
+  border-bottom: 0;
+}
+.side_content:last-child {
+  border-bottom: 1px solid #f0f0f0;
+}
+.side_content.active {
+  background-color: #ff921d;
+  color: white;
+  border: 0;
+}
+.side_content div {
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+.side_content img {
+  height: 36px;
+}
+.featured_conatiners {
+  flex: 1;
+}
+.main_vids_cat {
+  flex: 3;
+}
+.main_editprofile_contents {
+  flex: 5;
+  width: 83.3%;
+  /* display: inline-block; */
+  float: right;
+  padding: 25px;
+}
+.edit_image img {
+  height: 300px;
+  width: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+.edit_image {
+  display: flex;
+  flex-direction: column;
+}
+label.choose_profile_pic {
+  text-align: center;
+  margin-top: 20px;
+  border: 0;
+  background-color: #ff921d4f;
+  padding: 5px;
+  color: #ff921d;
+  font-weight: 500;
+  border-radius: 4px;
+}
+.edit_details {
+  margin-left: 25px;
+  width: 100%;
+}
+.edit_input {
+  display: flex;
+  flex-direction: column;
+}
+.edit_input input {
+  margin-bottom: 10px;
+  border: 1px solid #b6b6b6;
+  padding: 5px 10px;
+  border-radius: 4px;
+}
+.edit_input label {
+  color: #ff921d;
+  font-weight: 500;
+}
+button.submit_edit_profile {
+  background-color: #ff921d;
+  border: 0;
+  padding: 5px 15px;
+  color: white;
+  margin-top: 20px;
+  border-radius: 4px;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.d-flex {
+  display: flex !important;
+}
+
+.custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+input[type="file"] {
+  display: none;
+}
